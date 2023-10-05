@@ -42,18 +42,40 @@
         <h1>Support Discord Translator</h1>
         <p>Your donations help us keep the project alive and running. Thank you for your support!</p>
         <!-- PayPal -->
-        <a href="paypal.me/AcidAlchamy" class="btn btn-primary btn-lg">Donate via PayPal</a>
+        <a href="https://paypal.me/AcidAlchamy" class="btn btn-primary btn-lg">Donate via PayPal</a>
 
         <!-- CashApp -->
-        <p class="mt-4">CashApp: @AcidAlchamy</p>
+        <a href="https://cash.app/$AcidAlchamy" class="btn btn-success btn-lg mt-4">Donate via CashApp</a>
 
         <!-- Bitcoin Network -->
-        <p class="mt-4">Bitcoin Address: bc1q9hkvqjnxlexn9hqj9feuxl0lxc0ew9crxf9yld</p>
-      
+        <div class="mt-4">
+            <span>Bitcoin Address: </span>
+            <input type="text" value="bc1q9hkvqjnxlexn9hqj9feuxl0lxc0ew9crxf9yld" id="btc-address" readonly>
+            <button onclick="copyToClipboard('btc-address')" class="btn btn-info">Copy Address</button>
+        </div>
+
         <!-- Bitcoin Lightning Network -->
-        <p class="mt-4">Bitcoin Address: lnbc1pj37jz6dqdgdshx6pqg9c8qpp5ldvchsdur9zumrjuk8j4jpkzem2vdsq3h7au3au9jl0upafsf8jssp5cay3w0lat373vfw95qx3tj7sjz2qpaar4p4uv9ad8hgq93plzujs9qrsgqc qpcxqy8ayqrzjqv06k0m23t593pngl0jt7n9wznp64fqngvctz7vts8nq4tukvtljqrqsgcqqyrqqqgqqqqqqqqqqqqq9grzjqtsjy9p55gdceevp36fvdmrkxqvzfhy8ak2tg c5zgtjtra9xlaz97rqjpqqq8gcqqgqqqqqqqqqqqq9g7peyvgys6qezz8f8n0hvrxxfpdz9tfyyndaxm2mzvr4wqe8a2nlpjfw9x3pmasv8kht9ygs4fntveqqp22ujnt8caztvn6c 5wu6damgpfpeapj</p>      
+        <div class="mt-4">
+            <span>Bitcoin Lightning Address: </span>
+            <input type="text" value="lnbc1pj37jz6dqdgdshx6pqg9c8qpp5ldvchsdur9zumrjuk8j4jpkzem2vdsq3h7au3au9jl0upafsf8jssp5cay3w0lat373vfw95qx3tj7sjz2qpaar4p4uv9ad8hgq93plzujs9qrsgqcqpcxqy8ayqrzjqv06k0m23t593pngl0jt7n9wznp64fqngvctz7vts8nq4tukvtljqrqsgcqqyrqqqgqqqqqqqqqqqqq9grzjqtsjy9p55gdceevp36fvdmrkxqvzfhy8ak2tgc5zgtjtra9xlaz97rqjpqqq8gcqqgqqqqqqqqqqqq9g7peyvgys6qezz8f8n0hvrxxfpdz9tfyyndaxm2mzvr4wqe8a2nlpjfw9x3pmasv8kht9ygs4fntveqqp22ujnt8caztvn6c5wu6damgpfpeapj" id="btc-ln-address" readonly>
+            <button onclick="copyToClipboard('btc-ln-address')" class="btn btn-info">Copy Address</button>
+        </div>
+
+        <!-- BuyMeACoffee -->
+        <a href="https://www.buymeacoffee.com/acidalchamy" class="btn btn-warning btn-lg mt-4">Buy Me A Coffee</a>
     </div>
 </section>
+
+<script>
+    function copyToClipboard(elementId) {
+        var copyText = document.getElementById(elementId);
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+        document.execCommand("copy");
+        alert("Copied: " + copyText.value);
+    }
+</script>
+
 
 <!-- Footer -->
 <footer class="footer mt-auto py-3 bg-dark text-white text-center">
