@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donations | Discord Translator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Custom Styles */
         .donate-section {
             background-color: #f9f9f9;
             padding: 50px 0;
+        }
+        .donate-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .btn:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -37,54 +45,54 @@
 </nav>
 
 <!-- After your <nav> element -->
-<img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="position:absolute; top:50px; right:0; width:100px; margin-bottom:20px;">
+    <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="position:absolute; top:50px; right:0; width:100px; margin-bottom:20px;">
 
-<!-- Donate Section -->
-<section class="donate-section text-center" style="padding-top: 120px;">
-    <div class="container">
-        <h1>Support Discord Translator</h1>
-        <p>Your donations help us keep the project alive and running. Thank you for your support!</p>
-
-        <!-- PayPal -->
-        <div class="mb-4">
-            <a href="https://paypal.me/AcidAlchamy" class="btn btn-primary btn-lg">Donate via PayPal</a>
+    <!-- Donate Section -->
+    <section class="donate-section text-center" style="padding-top: 120px;">
+        <div class="container">
+            <h1><i class="fas fa-hand-holding-heart donate-icon"></i> Support Discord Translator</h1>
+            <p>Your donations help us keep the project alive and running. Thank you for your support!</p>
+    
+            <!-- PayPal -->
+            <div class="mb-4">
+                <a href="https://paypal.me/AcidAlchamy" class="btn btn-primary btn-lg"><i class="fab fa-paypal"></i> Donate via PayPal</a>
+            </div>
+    
+            <!-- CashApp -->
+            <div class="mb-4">
+                <a href="https://cash.app/$AcidAlchamy" class="btn btn-success btn-lg"><i class="fas fa-dollar-sign"></i> Donate via CashApp</a>
+            </div>
+    
+            <!-- Bitcoin Network -->
+            <div class="mt-4 mb-4">
+                <span><i class="fab fa-bitcoin"></i> Bitcoin Address: </span><br>
+                <input type="text" value="bc1q9hkvqjnxlexn9hqj9feuxl0lxc0ew9crxf9yld" id="btc-address" readonly><br>
+                <button onclick="copyToClipboard('btc-address')" class="btn btn-info">Copy Address</button>
+            </div>
+    
+            <!-- Bitcoin Lightning Network -->
+            <div class="mt-4 mb-4">
+                <span><i class="fas fa-bolt"></i> Bitcoin Lightning Address: </span><br>
+                <input type="text" value="lnbc1..." id="btc-ln-address" readonly><br>
+                <button onclick="copyToClipboard('btc-ln-address')" class="btn btn-info">Copy Address</button>
+            </div>
+    
+            <!-- BuyMeACoffee -->
+            <div class="mb-4">
+                <a href="https://www.buymeacoffee.com/acidalchamy" class="btn btn-warning btn-lg"><i class="fas fa-coffee"></i> Buy Me A Coffee</a>
+            </div>
         </div>
-
-        <!-- CashApp -->
-        <div class="mb-4">
-            <a href="https://cash.app/$AcidAlchamy" class="btn btn-success btn-lg">Donate via CashApp</a>
-        </div>
-
-        <!-- Bitcoin Network -->
-        <div class="mt-4 mb-4">
-            <span>Bitcoin Address: </span><br>
-            <input type="text" value="bc1q9hkvqjnxlexn9hqj9feuxl0lxc0ew9crxf9yld" id="btc-address" readonly><br>
-            <button onclick="copyToClipboard('btc-address')" class="btn btn-info">Copy Address</button>
-        </div>
-
-        <!-- Bitcoin Lightning Network -->
-        <div class="mt-4 mb-4">
-            <span>Bitcoin Lightning Address: </span><br>
-            <input type="text" value="lnbc1pj37jz6dqdgdshx6pqg9c8qpp5ldvchsdur9zumrjuk8j4jpkzem2vdsq3h7au3au9jl0upafsf8jssp5cay3w0lat373vfw95qx3tj7sjz2qpaar4p4uv9ad8hgq93plzujs9qrsgqc qpcxqy8ayqrzjqv06k0m23t593pngl0jt7n9wznp64fqngvctz7vts8nq4tukvtljqrqsgcqqyrqqqgqqqqqqqqqqqqq9grzjqtsjy9p55gdceevp36fvdmrkxqvzfhy8ak2tg c5zgtjtra9xlaz97rqjpqqq8gcqqgqqqqqqqqqqqq9g7peyvgys6qezz8f8n0hvrxxfpdz9tfyyndaxm2mzvr4wqe8a2nlpjfw9x3pmasv8kht9ygs4fntveqqp22ujnt8caztvn6c 5wu6damgpfpeapj" id="btc-ln-address" readonly><br>
-            <button onclick="copyToClipboard('btc-ln-address')" class="btn btn-info">Copy Address</button>
-        </div>
-
-        <!-- BuyMeACoffee -->
-        <div class="mb-4">
-            <a href="https://www.buymeacoffee.com/acidalchamy" class="btn btn-warning btn-lg">Buy Me A Coffee</a>
-        </div>
-    </div>
-</section>
-
-<script>
-    function copyToClipboard(elementId) {
-        var copyText = document.getElementById(elementId);
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); // For mobile devices
-        document.execCommand("copy");
-        alert("Copied: " + copyText.value);
-    }
-</script>
+    </section>
+    
+    <script>
+        function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand("copy");
+            alert("Copied: " + copyText.value);
+        }
+    </script>
 
 <!-- Footer -->
 <footer class="footer mt-auto py-3 bg-dark text-white text-center">
