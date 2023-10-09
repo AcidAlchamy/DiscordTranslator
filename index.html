@@ -67,7 +67,7 @@
         <h1>Hello, World Citizens! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
         <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
         <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
-        <a href="https://discord.com/oauth2/authorize?client_id=1148005265434759319&permissions=139586817024&scope=bot" class="btn btn-primary btn-lg">Invite to Discord</a>
+        <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
     </div>
 </section>
 
@@ -126,18 +126,31 @@
             success: function(data) {
                 $('#serverCount').text(data.serverCount);
                 $('#watcherCount').text(data.watcherCount);
-                $('#watchedCount').text(data.watchedCount);  // New line
-                $('#translationCount').text(data.translationCount);  // New line to display translation count
+                $('#watchedCount').text(data.watchedCount);
+                $('#translationCount').text(data.translationCount);
             },
             error: function(error) {
                 console.log('Error:', error);
             }
         });
     }
-    // Fetch every 5 seconds
+
+    function setInviteLink() {
+        let inviteLink = 'https://discord.com/oauth2/authorize?client_id=1148005265434759319&permissions=139586817024&scope=bot';
+        const userAgent = navigator.userAgent || navigator.vendor;
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            inviteLink = 'discord://';
+        } else if (/android/i.test(userAgent)) {
+            inviteLink = 'discord://';
+        }
+
+        document.getElementById('inviteLink').href = inviteLink;
+    }
+
+    setInviteLink();
     setInterval(fetchMetrics, 5000);
 </script>
-
 
 </body>
 </html>
