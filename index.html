@@ -117,16 +117,15 @@
 
 <script>
     function fetchMetrics() {
-    $.get('https://67ce-68-229-28-82.ngrok-free.app/metrics')
-    .done(function(data) {
-        console.log("Data received: ", data);
+    $.get('https://67ce-68-229-28-82.ngrok-free.app/metrics', function(data) {
+        console.log("Data received from API:", data);  // Debug line
         $('#serverCount').text(data.serverCount);
         $('#watcherCount').text(data.watcherCount);
-    })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-        console.log("Request failed: " + textStatus + ", " + errorThrown);
+    }).fail(function() {
+        console.log("Failed to fetch data from API");  // Debug line
     });
 }
+
     // Fetch every 5 seconds
     setInterval(fetchMetrics, 5000);
 </script>
