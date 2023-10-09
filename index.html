@@ -36,6 +36,7 @@
             background-color: #f1f9ff;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -117,12 +118,11 @@
 
 <script>
     function fetchMetrics() {
-      $.get('https://67ce-68-229-28-82.ngrok-free.app/metrics', function(data) {
-        $('#serverCount').text(data.serverCount);
-        $('#watcherCount').text(data.watcherCount);
-      });
+        $.get('https://67ce-68-229-28-82.ngrok-free.app/metrics', function(data) {
+            $('#serverCount').text(data.serverCount);
+            $('#watcherCount').text(data.watcherCount);
+        });
     }
-
     // Fetch every 5 seconds
     setInterval(fetchMetrics, 5000);
 </script>
