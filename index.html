@@ -117,11 +117,16 @@
 
 <script>
     function fetchMetrics() {
-        $.get('https://67ce-68-229-28-82.ngrok-free.app/metrics', function(data) {
-            $('#serverCount').text(data.serverCount);
-            $('#watcherCount').text(data.watcherCount);
-        });
-    }
+    $.get('https://67ce-68-229-28-82.ngrok-free.app/metrics')
+    .done(function(data) {
+        console.log("Data received: ", data);
+        $('#serverCount').text(data.serverCount);
+        $('#watcherCount').text(data.watcherCount);
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        console.log("Request failed: " + textStatus + ", " + errorThrown);
+    });
+}
     // Fetch every 5 seconds
     setInterval(fetchMetrics, 5000);
 </script>
