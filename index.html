@@ -68,6 +68,7 @@
     <div class="container">
         <h1>Hello, World Citizens! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
         <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
+        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span></p>
         <a href="https://discord.com/oauth2/authorize?client_id=1148005265434759319&permissions=139586817024&scope=bot" class="btn btn-primary btn-lg">Invite to Discord</a>
     </div>
 </section>
@@ -116,6 +117,18 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function fetchMetrics() {
+      $.get('http://localhost:3003/metrics', function(data) {
+        $('#serverCount').text(data.serverCount);
+        $('#watcherCount').text(data.watcherCount);
+      });
+    }
+
+    // Fetch every 5 seconds
+    setInterval(fetchMetrics, 5000);
+</script>
 
 </body>
 </html>
