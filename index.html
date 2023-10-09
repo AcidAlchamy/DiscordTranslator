@@ -66,7 +66,7 @@
     <div class="container">
         <h1>Hello, World Citizens! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
         <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
-        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span></p>
+        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span></p>
         <a href="https://discord.com/oauth2/authorize?client_id=1148005265434759319&permissions=139586817024&scope=bot" class="btn btn-primary btn-lg">Invite to Discord</a>
     </div>
 </section>
@@ -126,6 +126,7 @@
             success: function(data) {
                 $('#serverCount').text(data.serverCount);
                 $('#watcherCount').text(data.watcherCount);
+                $('#watchedCount').text(data.watchedCount);  // New line
             },
             error: function(error) {
                 console.log('Error:', error);
