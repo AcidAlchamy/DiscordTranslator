@@ -181,10 +181,10 @@
             
             greetingWrapper.replaceChild(newGreeting, oldGreeting);
             greetingIndex = (greetingIndex + 1) % greetings.length;
-        }, 1000);
+        }, 2000);
     }
     
-    setInterval(updateGreeting, 2000);
+    setInterval(updateGreeting, 3000);
 
     function fetchMetrics() {
         $.ajax({
