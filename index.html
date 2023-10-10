@@ -100,14 +100,16 @@
 <!-- Hero Section -->
 <section class="hero-section text-center">
     <div class="container">
-        <div id="greeting-wrapper">
-            <h1 id="greeting">Hello there, language enthusiast! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
-            <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
-            <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
-            <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
+        <div id="greeting-wrapper" class="d-flex align-items-center justify-content-center">
+            <!-- Rotating greeting will be inserted here by JavaScript -->
+            <img id="static-logo" src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;">
         </div>
+        <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
+        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
+        <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
     </div>
 </section>
+
 
 <!-- Features Section -->
 <section class="container my-5 bg-light-blue">
@@ -179,27 +181,24 @@
     const greetingWrapper = document.getElementById('greeting-wrapper');
     
     function updateGreeting() {
-        const oldGreeting = document.getElementById('greeting');
-        oldGreeting.classList.add('rotate-out');
+    const oldGreeting = document.getElementById('greeting');
+    if (oldGreeting) oldGreeting.classList.add('rotate-out');
+    
+    setTimeout(() => {
+        const newGreeting = document.createElement('h1');
+        newGreeting.textContent = greetings[greetingIndex];
+        newGreeting.id = 'greeting';
+        newGreeting.classList.add('rotate-in');
         
-        setTimeout(() => {
-            const newGreeting = oldGreeting.cloneNode(true);
-            newGreeting.textContent = greetings[greetingIndex];
-            newGreeting.id = 'greeting';
-            newGreeting.classList.remove('rotate-out');
-            newGreeting.classList.add('rotate-in');
-            
-            // Re-add the logo
-            const logo = document.createElement('img');
-            logo.src = "https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true";
-            logo.alt = "Your Logo";
-            logo.style.width = '100px';
-            newGreeting.appendChild(logo);
-            
+        if (oldGreeting) {
             greetingWrapper.replaceChild(newGreeting, oldGreeting);
-            greetingIndex = (greetingIndex + 1) % greetings.length;
-        }, 2000);
-    }
+        } else {
+            greetingWrapper.insertBefore(newGreeting, document.getElementById('static-logo'));
+        }
+        
+        greetingIndex = (greetingIndex + 1) % greetings.length;
+    }, 2000);
+}
     
     setInterval(updateGreeting, 4000);
 
