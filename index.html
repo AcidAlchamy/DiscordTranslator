@@ -64,7 +64,7 @@
 <!-- Hero Section -->
 <section class="hero-section text-center">
     <div class="container">
-        <h1>Hello there, language enthusiast! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
+        <h1 id="greeting">Hello there, language enthusiast! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
         <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
         <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
         <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
@@ -116,6 +116,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
+    // New script to rotate the greeting
+    let greetings = [
+        "Hello there, language enthusiast!", // English
+        "Hallo dort, Sprachenthusiast!",     // German
+        "Bonjour là-bas, passionné de langue!", // French
+        "Hola allí, entusiasta del idioma!", // Spanish
+        "Ciao là, appassionato di lingue!",  // Italian
+        // Add more as needed
+    ];
+    
+    let greetingIndex = 0;
+    const greetingElement = document.getElementById('greeting');
+    
+    setInterval(() => {
+        greetingElement.textContent = greetings[greetingIndex];
+        greetingIndex = (greetingIndex + 1) % greetings.length;
+    }, 1000); // Change every 1 second
+
     function fetchMetrics() {
         $.ajax({
             url: 'https://67ce-68-229-28-82.ngrok-free.app/metrics',
