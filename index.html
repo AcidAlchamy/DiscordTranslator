@@ -72,6 +72,20 @@
             height: 300px;
         }
     </style>
+    <style>
+        /* Custom Styles */
+        .hero-section {
+            position: relative; /* Relative positioning to contain the absolute-positioned logo */
+            /* ... (Same as before) */
+        }
+        #static-logo-container {
+            position: absolute; /* Absolute positioning */
+            top: 50%; /* Center it vertically */
+            right: 2%; /* A small distance from the right edge */
+            transform: translateY(-50%); /* Fine-tune vertical centering */
+        }
+        /* ... (Same as before) */
+    </style>
     
 </head>
 <body>
@@ -97,18 +111,21 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero-section text-center">
-    <div class="container">
-        <div id="greeting-wrapper" class="d-flex align-items-center justify-content-center">
-            <!-- Rotating greeting will be inserted here by JavaScript -->
-            <img id="static-logo" src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;">
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <!-- Logo placed in a fixed position -->
+            <div id="static-logo-container">
+                <img id="static-logo" src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;">
+            </div>
+            <div id="greeting-wrapper" class="d-flex align-items-center justify-content-center">
+                <!-- Rotating greeting will be inserted here by JavaScript -->
+            </div>
+            <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
+            <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
+            <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
         </div>
-        <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
-        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
-        <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
-    </div>
-</section>
+    </section>
 
 
 <!-- Features Section -->
