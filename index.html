@@ -74,14 +74,17 @@
         /* Media Query for Smaller Screens */
         @media (max-width: 768px) {
             #static-logo-container {
-                position: static;
-                display: block;
-                margin: 0 auto 20px auto; /* Center the logo and add margin at the bottom */
-                transform: none;
+                top: 10px; /* Adjusted position to give some space from the top */
+                right: 10px; /* Adjusted position to give some space from the right */
             }
 
             .hero-section p.lead {
                 margin-top: 20px;
+            }
+
+            /* Adjust greeting-wrapper to ensure the text does not overlap with the logo */
+            #greeting-wrapper {
+                margin-right: 150px; /* Approximate width of the logo + some spacing */
             }
         }
     </style>
