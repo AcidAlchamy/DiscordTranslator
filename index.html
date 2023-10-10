@@ -95,86 +95,90 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="https://discordtranslator.com">Discord Translator</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="faq.html">FAQ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="donations.html">Donations</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero-section text-center">
-    <div class="container">
-        <div id="static-logo-container">
-            <img id="static-logo" src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:140px;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://discordtranslator.com">Discord Translator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="donations.html">Donations</a>
+                </li>
+            </ul>
         </div>
-        <div id="greeting-wrapper" class="d-flex align-items-center justify-content-center">
-            <!-- Rotating greeting will be inserted here by JavaScript -->
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-center" style="position: relative;">
+                <!-- Logo Container -->
+                <div id="static-logo-container" style="position: absolute; right: 20px;">
+                    <img id="static-logo" src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:140px;">
+                </div>
+                <!-- Greeting Wrapper -->
+                <div id="greeting-wrapper">
+                    <!-- Rotating greeting will be inserted here by JavaScript -->
+                </div>
+            </div>
+            <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
+            <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
+            <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
         </div>
-        <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
-        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
-        <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section class="container my-5 bg-light-blue">
-    <h2 class="text-center mb-4">Key Features</h2>
-    <div class="row text-center">
-        <div class="col-md-4">
-            <i class="fas fa-globe feature-icon"></i>
-            <h4>Real-Time Translation</h4>
-            <p>Automatically translate messages in multiple languages without any manual intervention.</p>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="container my-5 bg-light-blue">
+        <h2 class="text-center mb-4">Key Features</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i class="fas fa-globe feature-icon"></i>
+                <h4>Real-Time Translation</h4>
+                <p>Automatically translate messages in multiple languages without any manual intervention.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-search feature-icon"></i>
+                <h4>Language Detection</h4>
+                <p>Our bot can detect the language of a message and translate it accordingly.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-cogs feature-icon"></i>
+                <h4>Flexible Settings</h4>
+                <p>Customize your language preferences per user or server-wide with simple commands.</p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <i class="fas fa-search feature-icon"></i>
-            <h4>Language Detection</h4>
-            <p>Our bot can detect the language of a message and translate it accordingly.</p>
+    </section>
+    
+    <!-- Tutorial Section -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">How to Get Started</h2>
+                <ol>
+                    <li>Click the 'Invite to Discord' button above to add the bot to your server.</li>
+                    <li>Use the command <code>!TranslatorBot help</code> to configure language preferences.</li>
+                    <li>Sit back and let Discord Translator do the work. Enjoy seamless conversations!</li>
+                </ol>
+            </div>
+            <div class="col-md-6">
+                <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/translator1.png?raw=true" alt="Tutorial Image" class="img-fluid custom-img-size">
+            </div>
         </div>
-        <div class="col-md-4">
-            <i class="fas fa-cogs feature-icon"></i>
-            <h4>Flexible Settings</h4>
-            <p>Customize your language preferences per user or server-wide with simple commands.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Tutorial Section -->
-<section class="container my-5">
-    <div class="row">
-        <div class="col-md-6">
-            <h2 class="text-center mb-4">How to Get Started</h2>
-            <ol>
-                <li>Click the 'Invite to Discord' button above to add the bot to your server.</li>
-                <li>Use the command <code>!TranslatorBot help</code> to configure language preferences.</li>
-                <li>Sit back and let Discord Translator do the work. Enjoy seamless conversations!</li>
-            </ol>
-        </div>
-        <div class="col-md-6">
-            <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/translator1.png?raw=true" alt="Tutorial Image" class="img-fluid custom-img-size">
-        </div>
-    </div>
-</section>
-
-<!-- Privacy Section -->
-<section class="container my-5 bg-light-blue">
-    <h2 class="text-center mb-4">Privacy Matters</h2>
-    <p>We value your privacy. Discord Translator only stores data that is essential for its functionality and deletes any translation data after a short period.</p>
-</section>
+    </section>
+    
+    <!-- Privacy Section -->
+    <section class="container my-5 bg-light-blue">
+        <h2 class="text-center mb-4">Privacy Matters</h2>
+        <p>We value your privacy. Discord Translator only stores data that is essential for its functionality and deletes any translation data after a short period.</p>
+    </section>
 
 <!-- Footer -->
 <!-- (Footer content here) -->
