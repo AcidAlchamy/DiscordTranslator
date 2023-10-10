@@ -71,12 +71,18 @@
         .hero-section {
             position: relative;
         }
-        #static-logo-container {
-            position: absolute;
-            top: 35%;
-            right: 2%;
-            max-width: calc(100% - 10px);  /* Added this line */
-            transform: translateY(-50%);
+        /* Media Query for Smaller Screens */
+        @media (max-width: 768px) {
+            #static-logo-container {
+                position: static;
+                display: block;
+                margin: 0 auto 20px auto; /* Center the logo and add margin at the bottom */
+                transform: none;
+            }
+
+            .hero-section p.lead {
+                margin-top: 20px;
+            }
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
