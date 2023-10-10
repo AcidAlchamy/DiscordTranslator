@@ -40,10 +40,10 @@
     <style>
         /* ... (Same as before) */
         .rotate-out {
-            animation: rotate-out 0.5s ease-in;
+            animation: rotate-out 1.0s ease-in;
         }
         .rotate-in {
-            animation: rotate-in 0.5s ease-out;
+            animation: rotate-in 1.0s ease-out;
         }
         @keyframes rotate-out {
             from {
@@ -175,10 +175,10 @@
             
             greetingWrapper.replaceChild(newGreeting, oldGreeting);
             greetingIndex = (greetingIndex + 1) % greetings.length;
-        }, 500); // Matches the duration of the rotate-out animation
+        }, 1000); // Matches the duration of the rotate-out animation
     }
     
-    setInterval(updateGreeting, 2000); // Change every 2 seconds
+    setInterval(updateGreeting, 3000); // Change every 2 seconds
 
     function fetchMetrics() {
         $.ajax({
