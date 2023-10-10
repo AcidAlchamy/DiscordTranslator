@@ -37,6 +37,37 @@
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* ... (Same as before) */
+        .rotate-out {
+            animation: rotate-out 0.5s ease-in;
+        }
+        .rotate-in {
+            animation: rotate-in 0.5s ease-out;
+        }
+        @keyframes rotate-out {
+            from {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+        }
+        @keyframes rotate-in {
+            from {
+                transform: rotateX(-90deg);
+                opacity: 0;
+            }
+            to {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
 
@@ -64,10 +95,12 @@
 <!-- Hero Section -->
 <section class="hero-section text-center">
     <div class="container">
-        <h1 id="greeting">Hello there, language enthusiast! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
-        <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
-        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
-        <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
+        <div id="greeting-wrapper">
+            <h1 id="greeting">Hello there, language enthusiast! <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;"></h1>
+            <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
+            <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
+            <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
+        </div>
     </div>
 </section>
 
@@ -127,12 +160,25 @@
     ];
     
     let greetingIndex = 0;
-    const greetingElement = document.getElementById('greeting');
+    const greetingWrapper = document.getElementById('greeting-wrapper');
     
-    setInterval(() => {
-        greetingElement.textContent = greetings[greetingIndex];
-        greetingIndex = (greetingIndex + 1) % greetings.length;
-    }, 3000); // Change every 1 second
+    function updateGreeting() {
+        const oldGreeting = document.getElementById('greeting');
+        oldGreeting.classList.add('rotate-out');
+        
+        setTimeout(() => {
+            const newGreeting = oldGreeting.cloneNode(true);
+            newGreeting.textContent = greetings[greetingIndex];
+            newGreeting.id = 'greeting';
+            newGreeting.classList.remove('rotate-out');
+            newGreeting.classList.add('rotate-in');
+            
+            greetingWrapper.replaceChild(newGreeting, oldGreeting);
+            greetingIndex = (greetingIndex + 1) % greetings.length;
+        }, 500); // Matches the duration of the rotate-out animation
+    }
+    
+    setInterval(updateGreeting, 2000); // Change every 2 seconds
 
     function fetchMetrics() {
         $.ajax({
