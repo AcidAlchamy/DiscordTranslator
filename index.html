@@ -132,7 +132,7 @@
     setInterval(() => {
         greetingElement.textContent = greetings[greetingIndex];
         greetingIndex = (greetingIndex + 1) % greetings.length;
-    }, 1000); // Change every 1 second
+    }, 3000); // Change every 1 second
 
     function fetchMetrics() {
         $.ajax({
