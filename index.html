@@ -35,9 +35,7 @@
         .bg-light-blue {
             background-color: #f1f9ff;
         }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
+        /* Rotating Greeting Styles */
         .rotate-out {
             animation: rotate-out 2.0s ease-in;
         }
@@ -64,29 +62,23 @@
                 opacity: 1;
             }
         }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
+        /* Custom Image Size */
         .custom-img-size {
             width: 400px;
             height: 300px;
         }
-    </style>
-    <style>
-        /* Custom Styles */
+        /* Hero Section with Logo */
         .hero-section {
-            position: relative; /* Relative positioning to contain the absolute-positioned logo */
-            /* ... (Same as before) */
+            position: relative;
         }
         #static-logo-container {
-            position: absolute; /* Absolute positioning */
-            top: 50%; /* Center it vertically */
-            right: 2%; /* A small distance from the right edge */
-            transform: translateY(-50%); /* Fine-tune vertical centering */
+            position: absolute;
+            top: 50%;
+            right: 2%;
+            transform: translateY(-50%);
         }
-        /* ... (Same as before) */
     </style>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -111,22 +103,20 @@
     </div>
 </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
-        <div class="container">
-            <!-- Logo placed in a fixed position -->
-            <div id="static-logo-container">
-                <img id="static-logo" src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;">
-            </div>
-            <div id="greeting-wrapper" class="d-flex align-items-center justify-content-center">
-                <!-- Rotating greeting will be inserted here by JavaScript -->
-            </div>
-            <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
-            <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
-            <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <div id="static-logo-container">
+            <img id="static-logo" src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/_3b409703-4bc5-4cea-9c17-dbbb79116ff8.png?raw=true" alt="Your Logo" style="width:100px;">
         </div>
-    </section>
-
+        <div id="greeting-wrapper" class="d-flex align-items-center justify-content-center">
+            <!-- Rotating greeting will be inserted here by JavaScript -->
+        </div>
+        <p class="lead">Break down language barriers effortlessly in your Discord server with Discord Translator.</p>
+        <p>Servers: <span id="serverCount"></span> | Watchers: <span id="watcherCount"></span> | Watched: <span id="watchedCount"></span> | Translations: <span id="translationCount"></span></p>
+        <a id="inviteLink" href="#" class="btn btn-primary btn-lg">Invite to Discord</a>
+    </div>
+</section>
 
 <!-- Features Section -->
 <section class="container my-5 bg-light-blue">
@@ -153,7 +143,6 @@
 <!-- Tutorial Section -->
 <section class="container my-5">
     <div class="row">
-        <!-- Column for the text -->
         <div class="col-md-6">
             <h2 class="text-center mb-4">How to Get Started</h2>
             <ol>
@@ -162,14 +151,11 @@
                 <li>Sit back and let Discord Translator do the work. Enjoy seamless conversations!</li>
             </ol>
         </div>
-        
-        <!-- Column for the image -->
         <div class="col-md-6">
             <img src="https://github.com/AcidAlchamy/DiscordTranslator/blob/main/images/translator1.png?raw=true" alt="Tutorial Image" class="img-fluid custom-img-size">
         </div>
     </div>
 </section>
-
 
 <!-- Privacy Section -->
 <section class="container my-5 bg-light-blue">
@@ -178,11 +164,11 @@
 </section>
 
 <!-- Footer -->
-<!-- ... (Same as before) -->
+<!-- (Footer content here) -->
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
     // New script to rotate the greeting
     let greetings = [
@@ -191,32 +177,31 @@
         "Hello there, language enthusiast!", // English
         "Hola allí, entusiasta del idioma!", // Spanish
         "Ciao là, appassionato di lingue!",  // Italian
-        // Add more as needed
     ];
-    
+
     let greetingIndex = 0;
     const greetingWrapper = document.getElementById('greeting-wrapper');
-    
+
     function updateGreeting() {
-    const oldGreeting = document.getElementById('greeting');
-    if (oldGreeting) oldGreeting.classList.add('rotate-out');
-    
-    setTimeout(() => {
-        const newGreeting = document.createElement('h1');
-        newGreeting.textContent = greetings[greetingIndex];
-        newGreeting.id = 'greeting';
-        newGreeting.classList.add('rotate-in');
-        
-        if (oldGreeting) {
-            greetingWrapper.replaceChild(newGreeting, oldGreeting);
-        } else {
-            greetingWrapper.insertBefore(newGreeting, document.getElementById('static-logo'));
-        }
-        
-        greetingIndex = (greetingIndex + 1) % greetings.length;
-    }, 2000);
-}
-    
+        const oldGreeting = document.getElementById('greeting');
+        if (oldGreeting) oldGreeting.classList.add('rotate-out');
+
+        setTimeout(() => {
+            const newGreeting = document.createElement('h1');
+            newGreeting.textContent = greetings[greetingIndex];
+            newGreeting.id = 'greeting';
+            newGreeting.classList.add('rotate-in');
+
+            if (oldGreeting) {
+                greetingWrapper.replaceChild(newGreeting, oldGreeting);
+            } else {
+                greetingWrapper.appendChild(newGreeting);
+            }
+
+            greetingIndex = (greetingIndex + 1) % greetings.length;
+        }, 2000);
+    }
+
     setInterval(updateGreeting, 4000);
 
     function fetchMetrics() {
