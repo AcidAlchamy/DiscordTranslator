@@ -215,6 +215,10 @@
         }, 2000);
     }
 
+    // Immediately show the greeting when the page loads
+    updateGreeting();
+
+    // Then continue with the rotation
     setInterval(updateGreeting, 4000);
 
     function fetchMetrics() {
