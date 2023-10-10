@@ -39,10 +39,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .rotate-out {
-            animation: rotate-out 1.0s ease-in;
+            animation: rotate-out 2.0s ease-in;
         }
         .rotate-in {
-            animation: rotate-in 1.0s ease-out;
+            animation: rotate-in 2.0s ease-out;
         }
         @keyframes rotate-out {
             from {
@@ -184,7 +184,7 @@
         }, 1000);
     }
     
-    setInterval(updateGreeting, 3000);
+    setInterval(updateGreeting, 2000);
 
     function fetchMetrics() {
         $.ajax({
