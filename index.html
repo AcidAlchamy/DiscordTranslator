@@ -69,25 +69,28 @@
         }
         /* Hero Section with Logo */
         .hero-section {
-            position: relative;
+        position: relative;
         }
+
+        #static-logo-container {
+            position: absolute;
+            top: 20px;  /* Adjusted position to give some space from the top */
+            right: 20px;  /* Adjusted position to give some space from the right */
+        }
+
+        /* Adjust greeting-wrapper to ensure the text does not overlap with the logo */
+        #greeting-wrapper {
+            padding-top: 160px; /* Approximate height of the logo + some spacing */
+        }
+
         /* Media Query for Smaller Screens */
         @media (max-width: 768px) {
-            #static-logo-container {
-                top: 10px; /* Adjusted position to give some space from the top */
-                right: 10px; /* Adjusted position to give some space from the right */
-            }
-
-            .hero-section p.lead {
-                margin-top: 20px;
-            }
-
-            /* Adjust greeting-wrapper to ensure the text does not overlap with the logo */
             #greeting-wrapper {
-                margin-right: 150px; /* Approximate width of the logo + some spacing */
+                padding-top: 100px; /* Adjusted for smaller screens */
             }
         }
-    </style>
+</style>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
