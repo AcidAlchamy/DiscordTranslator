@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, main, footer {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+header {
+    background-color: #f2f2f2;
+}
+
+main {
+    background-color: #ffffff;
+}
+
+footer {
+    background-color: #f2f2f2;
+}
