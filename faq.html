@@ -72,7 +72,7 @@
     <!-- Basic Setup -->
     <div class="faq-item">
         <h4>How do I set up TranslatorBot for my server?</h4>
-        <p>Use the `!TranslatorBot setup` command with the appropriate arguments. Only an administrator can run this command. Example: `!TranslatorBot setup 123456789 987654321 en`.</p>
+        <p>Use the `!tl setup` command with the appropriate arguments. Only an administrator can run this command. Example: `!tl setup 123456789 987654321 en`.</p>
         <ul>
             <li class="purple-bg"><strong>123456789</strong>: This is the admin channel ID where you want to set up the bot (typically a private channel).</li>
             <li class="purple-bg"><strong>987654321</strong>: This is the bot channel ID where the bot will send translations (typically the "general" channel).</li>
@@ -83,7 +83,7 @@
     <!-- Language Configuration -->
     <div class="faq-item">
         <h4>How do I set the default language for the server?</h4>
-        <p>Use the `!TranslatorBot setlangGlobal` command. Only an administrator can run this command. Example: `!TranslatorBot setlangGlobal en`.</p>
+        <p>Use the `!tl setlangGlobal` command. Only an administrator can run this command. Example: `!tl setlangGlobal en`.</p>
         <ul>
             <li class="purple-bg"><strong>en</strong>: This sets the default language for the server to English.</li>
         </ul>
@@ -91,7 +91,7 @@
 
     <div class="faq-item">
         <h4>How can I set my preferred language for translations?</h4>
-        <p>Use the `!TranslatorBot setlang` command. Example: `!TranslatorBot setlang es`.</p>
+        <p>Use the `!tl setlang` command. Example: `!tl setlang es`.</p>
         <ul>
             <li class="purple-bg"><strong>es</strong>: This sets your preferred language to Spanish.</li>
         </ul>
@@ -100,7 +100,7 @@
     <!-- Channel and User Watch -->
     <div class="faq-item">
         <h4>How can I watch a user's messages in a specific channel for translations?</h4>
-        <p>Use the `!TranslatorBot addChannel` command. Example: `!TranslatorBot addChannel 123456789 987654321 en`.</p>
+        <p>Use the `!tl addChannel` command. Example: `!tl addChannel 123456789 987654321 en`.</p>
         <ul>
             <li class="purple-bg"><strong>123456789</strong>: This is the channel ID where you want to watch the user's messages.</li>
             <li class="purple-bg"><strong>987654321</strong>: This is the user ID whose messages you want to watch.</li>
@@ -110,7 +110,7 @@
 
     <div class="faq-item">
         <h4>How can I stop watching a user's messages in a specific channel for translations?</h4>
-        <p>Use the `!TranslatorBot removeChannel` command. Example: `!TranslatorBot removeChannel 123456789 987654321 en`.</p>
+        <p>Use the `!tl removeChannel` command. Example: `!tl removeChannel 123456789 987654321 en`.</p>
         <ul>
             <li class="purple-bg"><strong>123456789</strong>: This is the channel ID where you were watching the user's messages.</li>
             <li class="purple-bg"><strong>987654321</strong>: This is the user ID whose messages you want to stop watching.</li>
@@ -120,7 +120,7 @@
 
     <div class="faq-item">
         <h4>How can I start watching a specific user for translations?</h4>
-        <p>Use the `!TranslatorBot TranslateUser` command. Example: `!TranslatorBot TranslateUser 987654321 en`.</p>
+        <p>Use the `!tl TranslateUser` command. Example: `!tl TranslateUser 987654321 en`.</p>
         <ul>
             <li class="purple-bg"><strong>987654321</strong>: This is the user ID whose messages you want to watch for translations.</li>
             <li class="purple-bg"><strong>en</strong>: This sets the language in which their messages will be translated.</li>
@@ -130,7 +130,7 @@
     <!-- Settings and Utilities -->
     <div class="faq-item">
         <h4>How can I view my current settings?</h4>
-        <p>Use the `!TranslatorBot printSettings` command. Example: `!TranslatorBot printSettings`.</p>
+        <p>Use the `!tl printSettings` command. Example: `!tl printSettings`.</p>
         <ul>
             <li class="purple-bg"><strong>No parameters required</strong>: This command will output your current settings.</li>
         </ul>
@@ -138,7 +138,7 @@
 
     <div class="faq-item">
         <h4>How can an administrator view the current bot settings?</h4>
-        <p>Use the `!TranslatorBot printAdminSettings` command. Only an administrator can run this command. Example: `!TranslatorBot printAdminSettings`.</p>
+        <p>Use the `!tl printAdminSettings` command. Only an administrator can run this command. Example: `!tl printAdminSettings`.</p>
         <ul>
             <li class="purple-bg"><strong>No parameters required</strong>: This command will output the current bot settings for the server.</li>
         </ul>
@@ -147,7 +147,7 @@
     <!-- Privacy and Control -->
     <div class="faq-item">
         <h4>How can I prevent my messages from being translated?</h4>
-        <p>Use the `!TranslatorBot Blacklist` command to add yourself to the translation blacklist. Example: `!TranslatorBot Blacklist`.</p>
+        <p>Use the `!tl Blacklist` command to add yourself to the translation blacklist. Example: `!tl Blacklist`.</p>
         <ul>
             <li class="purple-bg"><strong>No parameters required</strong>: This command will add you to the translation blacklist.</li>
         </ul>
@@ -155,7 +155,7 @@
 
     <div class="faq-item">
         <h4>How can I remove myself from the translation blacklist?</h4>
-        <p>Use the `!TranslatorBot unBlacklist` command. Example: `!TranslatorBot unBlacklist`.</p>
+        <p>Use the `!tl unBlacklist` command. Example: `!tl unBlacklist`.</p>
         <ul>
             <li class="purple-bg"><strong>No parameters required</strong>: This command will remove you from the translation blacklist.</li>
         </ul>
@@ -163,7 +163,7 @@
 
     <div class="faq-item">
         <h4>How can I stop being watched for translations by other users?</h4>
-        <p>Use the `!TranslatorBot unWatchMe` command. Example: `!TranslatorBot unWatchMe`.</p>
+        <p>Use the `!tl unWatchMe` command. Example: `!tl unWatchMe`.</p>
         <ul>
             <li class="purple-bg"><strong>No parameters required</strong>: This command will stop other users from watching you for translations.</li>
         </ul>
@@ -171,7 +171,7 @@
 
     <div class="faq-item">
         <h4>How can I prevent a specific user from watching me for translations?</h4>
-        <p>Use the `!TranslatorBot preventWatch` command. Example: `!TranslatorBot preventWatch 987654321`.</p>
+        <p>Use the `!tl preventWatch` command. Example: `!tl preventWatch 987654321`.</p>
         <ul>
             <li class="purple-bg"><strong>987654321</strong>: This is the user ID that you want to prevent from watching you for translations.</li>
         </ul>
@@ -179,7 +179,7 @@
 
     <div class="faq-item">
         <h4>How can I see who is watching me for translations?</h4>
-        <p>Use the `!TranslatorBot WhoIsWatchingMe` command. Example: `!TranslatorBot WhoIsWatchingMe`.</p>
+        <p>Use the `!tl WhoIsWatchingMe` command. Example: `!tl WhoIsWatchingMe`.</p>
         <ul>
             <li class="purple-bg"><strong>No parameters required</strong>: This command will display a list of users who are watching you for translations.</li>
         </ul>
@@ -187,7 +187,7 @@
 
     <div class="faq-item">
         <h4>How can I stop watching a specific user for translations?</h4>
-        <p>Use the `!TranslatorBot UnwatchUser` command. Example: `!TranslatorBot UnwatchUser 987654321`.</p>
+        <p>Use the `!tl UnwatchUser` command. Example: `!tl UnwatchUser 987654321`.</p>
         <ul>
             <li class="purple-bg"><strong>987654321</strong>: This is the user ID that you want to stop watching for translations.</li>
         </ul>
